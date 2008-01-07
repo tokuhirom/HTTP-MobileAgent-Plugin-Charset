@@ -40,6 +40,8 @@ HTTP::MobileAgent::Plugin::Charset - Encode::JP::Mobile friendly
 
   my $agent = HTTP::MobileAgent->new;
   $agent->can_display_utf8; # => 1 or 0
+
+  use Encode::JP::Mobile;
   encode($agent->encoding, "\x{223e}");
 
 =head1 DESCRIPTION
