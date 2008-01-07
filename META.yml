@@ -1,0 +1,17 @@
+--- 
+abstract: ~
+author: Tokuhiro Matsuno <tokuhirom aaaatttt gmail dotottto commmmm>
+build_requires: 
+  Test::More: 0
+distribution_type: module
+generated_by: Module::Install version 0.65
+license: perl
+meta-spec: 
+  url: http://module-build.sourceforge.net/META-spec-v1.3.html
+  version: 1.3
+name: HTTP-MobileAgent-Plugin-Charset
+no_index: 
+  directory: 
+    - inc
+    - t
+version: 0.01
