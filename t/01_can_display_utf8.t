@@ -80,7 +80,7 @@ encoding: x-utf8-airh
 --- input: UP.Browser/3.01-HI01 UP.Link/3.4.5.2
 --- expected
 can_display_utf8: no utf8
-encoding: x-sjis-ezweb
+encoding: x-sjis-ezweb-auto
 
 === ez
 --- input: KDDI-TS21 UP.Browser/6.0.2.276 (GUI) MMP/1.1

@@ -16,6 +16,8 @@ sub HTTP::MobileAgent::encoding {
     my $self = shift;
     if ($self->is_non_mobile) {
         return 'utf-8';
+    } elsif ($self->is_ezweb && !$self->can_display_utf8) {
+        return 'x-sjis-ezweb-auto';
     } else {
         my $charset = $self->can_display_utf8 ? 'utf8' : 'sjis';
         return join '-', 'x', $charset, lc($self->carrier_longname);
