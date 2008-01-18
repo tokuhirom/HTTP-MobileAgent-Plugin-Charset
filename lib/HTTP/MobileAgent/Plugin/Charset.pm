@@ -5,21 +5,19 @@ our $VERSION = '0.01';
 
 sub HTTP::MobileAgent::can_display_utf8 {
     my $self = shift;
-    $self->xhtml_compliant;
-}
-sub HTTP::MobileAgent::AirHPhone::can_display_utf8 {
-    my $self = shift;
-    $self->get_header('Accept-Charset') =~ /utf-?8/i ? 1 : 0;
+    $self->encoding =~ /utf-?8/ ? 1 : 0;
 }
 
 sub HTTP::MobileAgent::encoding {
     my $self = shift;
     if ($self->is_non_mobile) {
         return 'utf-8';
-    } elsif ($self->is_ezweb && !$self->can_display_utf8) {
+    } elsif ($self->is_airh_phone) {
+        return 'x-sjis-airh';
+    } elsif ($self->is_ezweb && !$self->xhtml_compliant) {
         return 'x-sjis-ezweb-auto';
     } else {
-        my $charset = $self->can_display_utf8 ? 'utf8' : 'sjis';
+        my $charset = $self->xhtml_compliant ? 'utf8' : 'sjis';
         return join '-', 'x', $charset, lc($self->carrier_longname);
     }
 }

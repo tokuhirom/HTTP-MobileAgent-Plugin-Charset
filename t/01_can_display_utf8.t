@@ -17,13 +17,6 @@ sub filt {
     my $ua = shift;
 
     local $ENV{HTTP_USER_AGENT} = $ua;
-    local $ENV{HTTP_ACCEPT_CHARSET};
-    if ($ua =~ /DDIPOCKET/) {
-        $ENV{HTTP_ACCEPT_CHARSET} =
-          ( $ua =~ /K3001V/ )
-          ? 'shift_jis, utf-8, utf-16, iso-8859-1;q=0.6, *;q=0.1'
-          : 'shift_jis; q=0.6, *;q=0.1';
-    }
 
     my $agent = HTTP::MobileAgent->new;
     +{
@@ -34,7 +27,7 @@ sub filt {
 
 __END__
 
-===
+=== PC
 --- input: Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.8) Gecko/20071019 Firefox/2.0.0.8
 --- expected
 can_display_utf8: utf8
@@ -52,13 +45,13 @@ encoding: x-utf8-docomo
 can_display_utf8: no utf8
 encoding: x-sjis-docomo
 
-=== 
+=== vodafone utf8
 --- input: Vodafone/1.0/V802SE/SEJ001/SNXXXXXXXXX Browser/SEMC-Browser/4.1 Profile/MIDP-2.0 Configuration/CLDC-1.10
 --- expected
 can_display_utf8: utf8
 encoding: x-utf8-vodafone
 
-===
+=== vodafone sjis
 --- input: J-PHONE/2.0/J-DN02
 --- expected
 can_display_utf8: no utf8
@@ -70,19 +63,13 @@ encoding: x-sjis-vodafone
 can_display_utf8: no utf8
 encoding: x-sjis-airh
 
-=== willcom
---- input: Mozilla/3.0(DDIPOCKET;KYOCERA/AH-K3001V/1.4.1.67.000000/0.1/C100) Opera 7.0
---- expected
-can_display_utf8: utf8
-encoding: x-utf8-airh
-
-=== ez
+=== ez sjis
 --- input: UP.Browser/3.01-HI01 UP.Link/3.4.5.2
 --- expected
 can_display_utf8: no utf8
 encoding: x-sjis-ezweb-auto
 
-=== ez
+=== ez utf8
 --- input: KDDI-TS21 UP.Browser/6.0.2.276 (GUI) MMP/1.1
 --- expected
 can_display_utf8: utf8
