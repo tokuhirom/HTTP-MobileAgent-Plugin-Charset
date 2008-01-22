@@ -72,6 +72,6 @@ encoding: x-sjis-ezweb-auto
 === ez utf8
 --- input: KDDI-TS21 UP.Browser/6.0.2.276 (GUI) MMP/1.1
 --- expected
-can_display_utf8: utf8
-encoding: x-utf8-ezweb
+can_display_utf8: no utf8
+encoding: x-sjis-ezweb-auto
 

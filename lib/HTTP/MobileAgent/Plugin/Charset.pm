@@ -14,7 +14,7 @@ sub HTTP::MobileAgent::encoding {
         return 'utf-8';
     } elsif ($self->is_airh_phone) {
         return 'x-sjis-airh';
-    } elsif ($self->is_ezweb && !$self->xhtml_compliant) {
+    } elsif ($self->is_ezweb) {
         return 'x-sjis-ezweb-auto';
     } else {
         my $charset = $self->xhtml_compliant ? 'utf8' : 'sjis';
@@ -27,7 +27,7 @@ __END__
 
 =encoding utf8
 
-=for stopwords aaaatttt dotottto gmail
+=for stopwords aaaatttt dotottto gmail SSL au utf8
 
 =head1 NAME
 
@@ -49,6 +49,10 @@ HTTP::MobileAgent::Plugin::Charset - Encode::JP::Mobile friendly
 HTTP::MobileAgent::Plugin::Charset is a plugin of HTTP::MobileAgent.
 
 You can detect encoding. The result can use with Encode::JP::Mobile.
+
+=head1 KNOWLEDGE
+
+au phone can display utf8, but cannot display when SSL.
 
 =head1 AUTHOR
 
