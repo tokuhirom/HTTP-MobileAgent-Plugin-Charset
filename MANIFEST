@@ -22,4 +22,3 @@ META.yml
 README
 t/00_compile.t
 t/01_can_display_utf8.t
-t/02_encoding.t
