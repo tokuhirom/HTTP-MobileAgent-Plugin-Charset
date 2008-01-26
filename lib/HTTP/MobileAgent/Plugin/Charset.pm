@@ -15,7 +15,14 @@ sub HTTP::MobileAgent::encoding {
     } elsif ($self->is_airh_phone) {
         return 'x-sjis-airh';
     } elsif ($self->is_ezweb) {
+        # ezweb canot display utf8 in https.
         return 'x-sjis-ezweb-auto';
+    } elsif ($self->is_vodafone) {
+        if ($self->is_type_3gc) {
+            return 'x-utf8-vodafone';
+        } else {
+            return 'x-sjis-vodafone';
+        }
     } else {
         my $charset = $self->xhtml_compliant ? 'utf8' : 'sjis';
         return join '-', 'x', $charset, lc($self->carrier_longname);
