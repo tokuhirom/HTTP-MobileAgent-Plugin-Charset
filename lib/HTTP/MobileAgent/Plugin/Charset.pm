@@ -1,7 +1,7 @@
 package HTTP::MobileAgent::Plugin::Charset;
 use strict;
 use warnings;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub HTTP::MobileAgent::can_display_utf8 {
     my $self = shift;
