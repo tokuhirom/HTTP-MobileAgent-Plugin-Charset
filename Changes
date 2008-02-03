@@ -1,5 +1,9 @@
 Revision history for Perl extension HTTP::MobileAgent::Plugin::Charset
 
+0.03
+
+    - (NO FEATURE CHANGES)
+
 0.02
 
     - fixed build dependencies to YAML.
