@@ -4,8 +4,8 @@ all_from 'lib/HTTP/MobileAgent/Plugin/Charset.pm';
 
 requires 'HTTP::MobileAgent' => '0.26';
 
-build_requires 'Test::More';
-build_requires 'YAML';
+test_requires 'Test::More' => 0.98;
+test_requires 'YAML';
+test_requires 'Test::Base';
 use_test_base;
-auto_include;
 WriteAll;
