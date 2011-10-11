@@ -1,5 +1,9 @@
 Revision history for Perl extension HTTP::MobileAgent::Plugin::Charset
 
+0.04
+
+    - modernize Makefile.PL
+
 0.03
 
     - (NO FEATURE CHANGES)
