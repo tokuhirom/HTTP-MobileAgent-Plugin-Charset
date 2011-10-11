@@ -8,4 +8,5 @@ test_requires 'Test::More' => 0.98;
 test_requires 'YAML';
 test_requires 'Test::Base';
 use_test_base;
+author_tests('xt');
 WriteAll;
